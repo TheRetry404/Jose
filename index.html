@@ -3,180 +3,513 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JFJ LANDSCAPING</title>
+    <title>JFJ LANDSCAPING - Your Green Space Experts</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
     <style>
+        :root {
+            /* Paleta de colores más fresca y natural */
+            --color-primary-green: #388E3C; /* Verde oscuro para elementos principales */
+            --color-light-green: #66BB6A; /* Verde más claro para acentos */
+            --color-accent-orange: #FFB300; /* Naranja vibrante para resaltar */
+            --color-dark-text: #212121; /* Texto muy oscuro */
+            --color-light-text: #757575; /* Texto gris para párrafos */
+            --color-background-light: #F9F9F9; /* Fondo claro para secciones */
+            --color-white: #FFFFFF;
+            --color-whatsapp: #25D366;
+            --color-whatsapp-dark: #1DA851;
+            --box-shadow-light: 0 4px 15px rgba(0, 0, 0, 0.08);
+            --box-shadow-medium: 0 8px 25px rgba(0, 0, 0, 0.15);
+        }
+
         body {
-            font-family: 'Arial', sans-serif;
+            font-family: 'Poppins', sans-serif; /* Fuente moderna y limpia */
             margin: 0;
             padding: 0;
-            background-color: #4CAF50; /* Verde césped */
-            color: #333; /* Texto oscuro */
+            color: var(--color-dark-text);
+            line-height: 1.7; /* Mejor legibilidad */
+            overflow-x: hidden; /* Evita scroll horizontal */
+
+            /* --- Fondo con movimiento: Patrón generado con CSS --- */
+            background-color: var(--color-light-green); /* Color de respaldo */
+            background-image: repeating-linear-gradient(
+                45deg,
+                transparent,
+                transparent 20px,
+                rgba(255, 255, 255, 0.05) 20px,
+                rgba(255, 255, 255, 0.05) 40px
+            ),
+            repeating-linear-gradient(
+                -45deg,
+                transparent,
+                transparent 20px,
+                rgba(0, 0, 0, 0.05) 20px,
+                rgba(0, 0, 0, 0.05) 40px
+            );
+            animation: css-pattern-scroll 60s linear infinite;
+            background-size: 600px 600px; /* Tamaño del patrón. Puedes ajustarlo. */
         }
+
+        /* Animación para el patrón de fondo CSS */
+        @keyframes css-pattern-scroll {
+            from { background-position: 0 0, 0 0; }
+            to { background-position: 600px 0, -600px 0; } /* Desplaza dos capas en direcciones opuestas */
+        }
+
+        /* --- Header Section --- */
         header {
-            background-image: url('https://static.vecteezy.com/system/resources/previews/003/086/563/non_2x/artificial-grass-texture-banner-free-photo.jpg'); /* Reemplaza con la URL de tu imagen de césped */
-            background-size: cover; /* Asegura que la imagen cubra todo el encabezado */
-            background-position: center; /* Centra la imagen */
-            color: white;
-            padding: 20px 0;
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+                        url('https://images.unsplash.com/photo-1542844445-be025dd59332?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w1NzUyNzR8MHwxfHNlYXJjaHwzfHxob21lJTIwZ2FyZGVufGVufDB8fHx8MTcwNzAxODQzMXww&ixlib=rb-4.0.3&q=80&w=1080') center/cover no-repeat; /* Imagen de jardín con superposición oscura */
+            color: var(--color-white);
+            padding: 80px 20px; /* Más padding para un look imponente */
             text-align: center;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-        }
-        nav {
-            margin: 20px 0;
-        }
-        nav a {
-            margin: 0 15px;
-            text-decoration: none;
-            transition: transform 0.3s, background-color 0.3s;
-            display: inline-block; /* Para que el botón se comporte como un bloque */
-            padding: 10px 20px; /* Espaciado interno del botón */
-            background-color: #ff9800; /* Naranja */
-            color: white; /* Texto blanco */
-            border-radius: 5px; /* Esquinas redondeadas */
-        }
-        nav a:hover {
-            transform: scale(1.1); /* Aumenta el tamaño al pasar el ratón */
-            background-color: #e68a00; /* Naranja más oscuro */
-        }
-        h1 {
-            font-size: 2.5em; /* Tamaño de fuente */
-            margin: 0; /* Elimina el margen */
-        }
-        .logo-text {
-            line-height: 1; /* Espaciado entre líneas */
-        }
-        section {
-            padding: 40px;
-            margin: 20px;
-            background: #f4f4f4; /* Fondo claro para las secciones */
-            border-radius: 10px;
-            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s;
-        }
-        section:hover {
-            transform: translateY(-5px);
-        }
-        footer {
-            text-align: center;
-            padding: 20px 0;
-            background: #4CAF50; /* Verde */
-            color: white;
+            box-shadow: var(--box-shadow-medium);
             position: relative;
-            bottom: 0;
+            animation: fadeIn 1s ease-out; /* Animación de entrada */
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        h1 {
+            font-family: 'Playfair Display', serif; /* Fuente elegante para el logo */
+            font-size: 4.5em; /* Tamaño grande y audaz */
+            margin: 0;
+            line-height: 1.1;
+            text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.6); /* Sombra más pronunciada */
+            letter-spacing: 2px;
+        }
+
+        .logo-text span {
+            display: block; /* Cada palabra en una línea */
+        }
+        .logo-text span:first-child {
+            font-size: 0.8em; /* Ajuste para "JFJ" */
+            font-weight: 400;
+        }
+
+        nav {
+            margin-top: 40px;
+            display: flex; /* Usamos flexbox para centrar y espaciar los botones */
+            justify-content: center;
+            flex-wrap: wrap; /* Permite que los botones se envuelvan en pantallas pequeñas */
+            gap: 15px; /* Espacio entre los botones */
+        }
+
+        nav a {
+            text-decoration: none;
+            transition: all 0.3s ease-in-out;
+            padding: 14px 30px;
+            background-color: var(--color-accent-orange);
+            color: var(--color-white);
+            border-radius: 50px; /* Bordes completamente redondeados */
+            font-weight: 600;
+            box-shadow: var(--box-shadow-light);
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+        }
+
+        nav a:hover {
+            transform: translateY(-5px) scale(1.05); /* Efecto de levantamiento y escalado */
+            background-color: var(--color-secondary-dark);
+            box-shadow: var(--box-shadow-medium);
+        }
+
+        /* --- Main Content Area --- */
+        main {
+            max-width: 1200px;
+            margin: 40px auto; /* Más margen superior/inferior */
+            padding: 0 25px; /* Más padding lateral */
+        }
+
+        section {
+            padding: 50px; /* Más padding */
+            margin-bottom: 35px;
+            background: var(--color-white); /* Fondo blanco limpio */
+            border-radius: 12px; /* Bordes más redondeados */
+            box-shadow: var(--box-shadow-light);
+            transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94); /* Curva de transición suave */
+            position: relative;
+            overflow: hidden; /* Para efectos visuales */
+        }
+
+        section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
             width: 100%;
+            height: 10px; /* Pequeña barra superior */
+            background-color: var(--color-primary-green);
+            border-top-left-radius: 12px;
+            border-top-right-radius: 12px;
         }
+
+        section:hover {
+            transform: translateY(-10px) scale(1.005); /* Mayor levantamiento y ligero escalado */
+            box-shadow: var(--box-shadow-medium);
+        }
+
         h2 {
-            color: #4CAF50; /* Verde */
-            margin-bottom: 20px;
+            font-family: 'Playfair Display', serif;
+            color: var(--color-primary-green);
+            margin-bottom: 30px;
+            font-size: 2.8em; /* Títulos más grandes */
+            text-align: center;
+            position: relative;
+            padding-bottom: 15px;
         }
-        ul {
+
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px; /* Subrayado central */
+            height: 4px;
+            background-color: var(--color-accent-orange);
+            border-radius: 2px;
+        }
+
+        p {
+            color: var(--color-light-text);
+            font-size: 1.1em;
+            line-height: 1.8;
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 20px auto; /* Centrar párrafos */
+        }
+
+        /* --- Services List --- */
+        #services ul {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* 2-3 columnas */
+            gap: 20px;
             list-style-type: none;
             padding: 0;
-        }
-        ul li {
-            background: #ff9800; /* Naranja */
-            margin: 10px 0;
-            padding: 15px;
-            border-radius: 5px;
-            transition: background 0.3s;
-        }
-        ul li:hover {
-            background: #e68a00; /* Naranja más oscuro */
+            margin-top: 30px;
         }
 
-        /* Media Queries for Responsiveness */
-        @media (max-width: 768px) {
-            section {
-                padding: 20px;
-                margin: 10px;
+        #services ul li {
+            background: var(--color-light-green); /* Verde claro para los elementos de servicio */
+            margin: 0; /* Quitamos el margen vertical extra */
+            padding: 25px;
+            border-radius: 10px;
+            transition: background 0.3s ease-in-out, transform 0.3s ease-in-out;
+            color: var(--color-white);
+            font-weight: 600;
+            font-size: 1.15em;
+            text-align: center;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        #services ul li::before {
+            content: '🌿'; /* Icono de hoja */
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            font-size: 1.5em;
+            opacity: 0.7;
+            transition: transform 0.3s ease;
+        }
+
+        #services ul li:hover {
+            background: var(--color-primary-green); /* Verde más oscuro al pasar el ratón */
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        #services ul li:hover::before {
+            transform: rotate(15deg) scale(1.1);
+        }
+
+        /* --- Contact Section --- */
+        .contact-info {
+            text-align: center;
+        }
+
+        .contact-info p {
+            font-size: 1.1em;
+            margin-bottom: 15px;
+            color: var(--color-dark-text);
+        }
+
+        .contact-info a {
+            color: var(--color-primary-green);
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+        .contact-info a:hover {
+            color: var(--color-accent-orange);
+            text-decoration: underline;
+        }
+
+        .whatsapp-button {
+            display: inline-flex; /* Usar flex para centrar contenido */
+            align-items: center;
+            gap: 10px; /* Espacio entre texto y icono */
+            padding: 15px 30px;
+            background-color: var(--color-whatsapp);
+            color: var(--color-white);
+            border-radius: 50px;
+            text-decoration: none;
+            transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out, box-shadow 0.3s ease;
+            font-weight: 600;
+            margin-top: 25px;
+            box-shadow: var(--box-shadow-light);
+        }
+
+        .whatsapp-button:hover {
+            background-color: var(--color-whatsapp-dark);
+            transform: translateY(-3px);
+            box-shadow: var(--box-shadow-medium);
+        }
+
+        .whatsapp-button svg {
+            fill: var(--color-white); /* Color del icono */
+            width: 24px;
+            height: 24px;
+        }
+
+        /* --- Gallery Section --- */
+        .gallery-container {
+            display: none; /* Oculta por defecto */
+            text-align: center;
+            background: var(--color-white);
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+
+        .gallery-item {
+            overflow: hidden;
+            border-radius: 12px;
+            box-shadow: var(--box-shadow-light);
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease;
+            background-color: var(--color-background-light); /* Fondo para el item */
+        }
+
+        .gallery-item:hover {
+            transform: scale(1.03);
+            box-shadow: var(--box-shadow-medium);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 220px; /* Altura un poco mayor */
+            object-fit: cover;
+            display: block;
+            border-bottom: 4px solid var(--color-accent-orange); /* Línea decorativa */
+        }
+
+        /* --- Footer Section --- */
+        footer {
+            text-align: center;
+            padding: 30px 20px;
+            background: var(--color-primary-green);
+            color: var(--color-white);
+            width: 100%;
+            margin-top: 50px;
+            box-shadow: 0 -5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        footer p {
+            margin: 0;
+            font-size: 0.95em;
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        /* --- Responsive Design --- */
+        @media (max-width: 992px) {
+            h1 {
+                font-size: 3.5em;
             }
             nav a {
-                display: block;
-                margin: 10px 0;
+                padding: 12px 25px;
+            }
+            section {
+                padding: 40px;
+                margin-bottom: 25px;
+            }
+            h2 {
+                font-size: 2.4em;
+            }
+            #services ul {
+                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             }
         }
 
-        /* Estilos para la galería de imágenes */
-        .gallery {
-            display: none; /* Oculta la galería por defecto */
-            margin-top: 20px;
-            padding: 20px;
-            background: #f4f4f4;
-            border-radius: 10px;
-            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+        @media (max-width: 768px) {
+            header {
+                padding: 60px 15px;
+            }
+            h1 {
+                font-size: 2.8em;
+            }
+            .logo-text span:first-child {
+                font-size: 0.7em;
+            }
+            nav {
+                flex-direction: column; /* Apila los botones de navegación */
+                align-items: center;
+                gap: 10px;
+            }
+            nav a {
+                width: 80%; /* Ancho para los botones apilados */
+                max-width: 250px;
+                padding: 12px 20px;
+            }
+            main {
+                margin: 30px auto;
+                padding: 0 15px;
+            }
+            section {
+                padding: 30px;
+                margin-bottom: 20px;
+            }
+            h2 {
+                font-size: 2em;
+            }
+            p {
+                font-size: 1em;
+            }
+            .gallery-grid {
+                grid-template-columns: 1fr; /* Una columna en pantallas más pequeñas */
+            }
+            .gallery-item img {
+                height: 200px;
+            }
         }
-        .gallery img {
-            width: 100%;
-            max-width: 300px; /* Tamaño máximo de las imágenes */
-            margin: 10px;
-            border-radius: 5px;
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 2.2em;
+            }
+            .logo-text span:first-child {
+                font-size: 0.6em;
+            }
+            section {
+                padding: 20px;
+            }
+            h2 {
+                font-size: 1.8em;
+            }
+            .whatsapp-button {
+                padding: 12px 20px;
+                font-size: 0.9em;
+            }
+            .whatsapp-button svg {
+                width: 20px;
+                height: 20px;
+            }
         }
     </style>
 </head>
 <body>
 
 <header>
-    <h1 class="logo-text">JFJ<br />LANDSCAPING</h1>
+    <h1 class="logo-text"><span>JFJ</span>LANDSCAPING</h1>
     <nav>
         <a href="#services">Services</a>
         <a href="#about">About Us</a>
         <a href="#contact">Contact</a>
-        <a href="#gallery" id="gallery-link">Our Work</a>
+        <a href="#" id="gallery-link">Our Work</a>
     </nav>
 </header>
 
-<section id="services">
-    <h2>Our Services</h2>
-    <ul>
-        <li>CLEAN UPS</li>
-        <li>PAVERS</li>
-        <li>TRIMMING</li>
-        <li>AERATION/SEEDING</li>
-        <li>MULCH/STONE</li>
-        <li>LAWN CARE</li>
-        <li>LANDSCAPE DESIGN</li>
-    </ul>
-</section>
+<main>
+    <section id="services">
+        <h2>Our Services</h2>
+        <ul>
+            <li>CLEAN UPS</li>
+            <li>PAVERS</li>
+            <li>TRIMMING</li>
+            <li>AERATION/SEEDING</li>
+            <li>MULCH/STONE</li>
+            <li>LAWN CARE</li>
+            <li>LANDSCAPE DESIGN</li>
+        </ul>
+    </section>
 
-<section id="about">
-    <h2>About Us</h2>
-    <p>We are a dedicated gardening business located in the United States, committed to providing high-quality gardening services to our clients. With years of experience, we take pride in transforming outdoor spaces into beautiful and functional gardens.</p>
-</section>
+    <section id="about">
+        <h2>About Us</h2>
+        <p>We are a dedicated gardening business located in the United States, committed to providing high-quality gardening services to our clients. With years of experience, we take pride in transforming outdoor spaces into beautiful and functional gardens. Our passion is to create stunning landscapes that enhance the beauty and value of your property, tailored to your specific needs and vision.</p>
+    </section>
 
-<section id="contact">
-    <h2>Contact Us</h2>
-    <p>If you would like to get a quote or have any questions, feel free to reach out!</p>
-    <p>Email: <a href="mailto:jfjlandscaping@gmail.com">jfjlandscaping@gmail.com</a></p>
-    <p>Phone: (856) 388-7224</p>
-    <a href="https://wa.me/18563887224" target="_blank" style="display: inline-block; padding: 10px 20px; background-color: #25D366; color: white; border-radius: 5px; text-decoration: none; transition: background-color 0.3s;">Contact on WhatsApp</a>
-</section>
+    <section id="contact" class="contact-info">
+        <h2>Contact Us</h2>
+        <p>If you would like to get a quote or have any questions, feel free to reach out! We are here to help you achieve the garden of your dreams.</p>
+        <p>Email: <a href="mailto:jfjlandscaping@gmail.com">jfjlandscaping@gmail.com</a></p>
+        <p>Phone: <a href="tel:+18563887224">(856) 388-7224</a></p>
+        <a href="https://wa.me/18563887224" target="_blank" class="whatsapp-button">
+            <svg viewBox="0 0 24 24">
+                <path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.5 3.42 1.46 4.88l-1.5 5.57 5.67-1.48c1.37.75 2.92 1.15 4.28 1.15h.02c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.88-6.99-1.85-1.85-4.34-2.88-6.99-2.88zm0 1.77c4.54 0 8.19 3.65 8.19 8.19 0 2.14-.85 4.14-2.38 5.66l-1.08-.66c-1.3-.8-2.81-1.22-4.43-1.22h-.01c-4.54 0-8.19-3.65-8.19-8.19 0-2.2.86-4.26 2.4-5.78 1.54-1.52 3.59-2.38 5.79-2.38zm-1.84 6.77c-.12 0-.25.02-.37.04-.49.09-1.07.2-1.55.77-.52.59-1.06 1.42-1.16 1.54s-.22.2-.42.2c-.2 0-.42-.08-.6-.24-.18-.16-.62-.77-.85-1.07-.23-.3-.47-.25-.65-.25-.2 0-.43-.01-.66.01-.2.02-.53.07-.81.36-.28.3-.77.74-.77 1.8 0 1.06.84 2.07.96 2.24s1.77 2.7 4.29 3.73c2.42 1 3.32.96 3.93.84.6-.11 1.48-.61 1.76-.94.28-.33.3-1.04.2-1.22s-.12-.2-.25-.33c-.12-.11-.29-.18-.49-.28-.19-.09-.34-.14-.52-.07-.18.07-.37.37-.52.55-.15.19-.29.21-.5.06s-.84-.31-1.6-.99c-.6-.53-1-1.19-1.34-1.74-.34-.55-.04-.84.25-1.12.2-.2.4-.2.57-.2z" />
+            </svg>
+            Contact on WhatsApp
+        </a>
+    </section>
 
-<!-- Nueva sección para la galería de imágenes -->
-<section id="gallery" class="gallery">
-    <h2>Our Work</h2>
-    <img src="https://live.staticflickr.com/65535/54629157938_aae3605c96_k.jpg" alt="Trabajo 1" />
-    <img src="https://live.staticflickr.com/65535/54628068372_be2b2d2d69_c.jpg" alt="Trabajo 2" />
-    <img src="https://live.staticflickr.com/65535/54628068042_f96cb138e9_c.jpg" alt="Trabajo 3" />
-    <img src="https://live.staticflickr.com/65535/54629237900_17ed7aef1b_c.jpg" alt="Trabajo 4" />
-    <img src="https://live.staticflickr.com/65535/54629143679_7a3978cc39_c.jpg" alt="Trabajo 5" />
-    <img src="https://live.staticflickr.com/65535/54628942071_cc6c5bf934_c.jpg" alt="Trabajo 6" />
-</section>
+    <section id="gallery-section" class="gallery-container">
+        <h2>Our Work</h2>
+        <div class="gallery-grid">
+            <div class="gallery-item">
+                <img src="https://live.staticflickr.com/65535/54629157938_aae3605c96_k.jpg" alt="Trabajo de paisajismo 1 - Jardín recién arreglado" />
+            </div>
+            <div class="gallery-item">
+                <img src="https://live.staticflickr.com/65535/54628068372_be2b2d2d69_c.jpg" alt="Trabajo de paisajismo 2 - Creación de senderos y macetas" />
+            </div>
+            <div class="gallery-item">
+                <img src="https://live.staticflickr.com/65535/54628068042_f96cb138e9_c.jpg" alt="Trabajo de paisajismo 3 - Diseño de jardín ornamental" />
+            </div>
+            <div class="gallery-item">
+                <img src="https://live.staticflickr.com/65535/54629237900_17ed7aef1b_c.jpg" alt="Trabajo de paisajismo 4 - Instalación de sistema de riego" />
+            </div>
+            <div class="gallery-item">
+                <img src="https://live.staticflickr.com/65535/54629143679_7a3978cc39_c.jpg" alt="Trabajo de paisajismo 5 - Árboles y arbustos podados" />
+            </div>
+            <div class="gallery-item">
+                <img src="https://live.staticflickr.com/65535/54628942071_cc6c5bf934_c.jpg" alt="Trabajo de paisajismo 6 - Zona de descanso con adoquines" />
+            </div>
+        </div>
+    </section>
+</main>
 
 <footer>
     <p>&copy; 2025 JFJ LANDSCAPING. All rights reserved.</p>
 </footer>
 
 <script>
-    // Script para mostrar/ocultar la galería
     document.getElementById('gallery-link').addEventListener('click', function(event) {
-        event.preventDefault(); // Evita el comportamiento predeterminado del enlace
-        const gallery = document.getElementById('gallery');
-        // Alterna la visibilidad de la galería
-        if (gallery.style.display === 'none' || gallery.style.display === '') {
-            gallery.style.display = 'block';
+        event.preventDefault();
+        const gallerySection = document.getElementById('gallery-section');
+
+        if (gallerySection.style.display === 'none' || gallerySection.style.display === '') {
+            gallerySection.style.display = 'block';
+            gallerySection.scrollIntoView({ behavior: 'smooth', block: 'start' }); // Scroll al inicio de la sección
         } else {
-            gallery.style.display = 'none';
+            gallerySection.style.display = 'none';
         }
+    });
+
+    // Opcional: Cerrar galería si se hace clic fuera o en otro enlace de navegación
+    document.querySelectorAll('nav a:not(#gallery-link)').forEach(link => {
+        link.addEventListener('click', function() {
+            const gallerySection = document.getElementById('gallery-section');
+            if (gallerySection.style.display === 'block') {
+                gallerySection.style.display = 'none';
+            }
+        });
     });
 </script>
 
